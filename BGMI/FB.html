@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mobile Login Demo</title>
+
+<style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background: #fff;
+}
+
+.container {
+    width: 100%;
+    max-width: 430px;
+    min-height: 100vh;
+    margin: auto;
+    padding: 35px 22px 25px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Facebook-style logo */
+.logo {
+    width: 70px;
+    height: 70px;
+    background: #0866ff;
+    border-radius: 50%;
+    margin: 20px auto 55px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: white;
+    font-size: 58px;
+    font-weight: bold;
+    line-height: 1;
+}
+
+/* Login title */
+h1 {
+    font-size: 25px;
+    margin-bottom: 25px;
+    color: #111;
+}
+
+/* Inputs */
+.input {
+    width: 100%;
+    height: 58px;
+
+    border: 1px solid #aaa;
+    border-radius: 14px;
+
+    padding: 0 17px;
+    margin-bottom: 13px;
+
+    font-size: 16px;
+    outline: none;
+}
+
+.input:focus {
+    border: 2px solid #0866ff;
+}
+
+/* Login button */
+.login {
+    width: 100%;
+    height: 55px;
+
+    border: none;
+    border-radius: 28px;
+
+    background: #0866ff;
+    color: white;
+
+    font-size: 18px;
+    font-weight: bold;
+
+    margin-top: 5px;
+    cursor: not-allowed;
+}
+
+/* Forgot password */
+.forgot {
+    text-align: center;
+    margin: 25px 0 55px;
+
+    font-size: 16px;
+    font-weight: 500;
+}
+
+/* Divider */
+.divider {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    margin-bottom: 25px;
+
+    color: #777;
+    font-size: 14px;
+}
+
+.divider::before,
+.divider::after {
+    content: "";
+    height: 1px;
+    background: #ddd;
+    flex: 1;
+}
+
+/* Create account */
+.create {
+    width: 100%;
+    height: 52px;
+
+    border-radius: 27px;
+
+    border: 1.5px solid #0866ff;
+    background: white;
+
+    color: #0866ff;
+
+    font-size: 17px;
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+/* Meta */
+.meta {
+    margin-top: auto;
+    padding-top: 50px;
+
+    text-align: center;
+
+    color: #444;
+    font-size: 19px;
+    font-weight: bold;
+}
+
+.meta span {
+    color: #0866ff;
+    font-size: 25px;
+}
+
+/* Small phones */
+@media (max-width: 360px) {
+
+    .container {
+        padding: 25px 18px;
+    }
+
+    .logo {
+        width: 62px;
+        height: 62px;
+        font-size: 50px;
+        margin-bottom: 40px;
+    }
+
+    h1 {
+        font-size: 22px;
+    }
+
+    .input {
+        height: 54px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- LOGO -->
+    <div class="logo">f</div>
+
+    <!-- TITLE -->
+    <h1>Log in to Facebook</h1>
+
+    <!-- PHONE NUMBER -->
+    <input
+        class="input"
+        type="tel"
+        placeholder="Mobile number"
+        autocomplete="off"
+    >
+
+    <!-- PASSWORD -->
+    <input
+        class="input"
+        type="password"
+        placeholder="Password"
+        autocomplete="off"
+    >
+
+    <!-- DEMO LOGIN BUTTON -->
+    <button class="login" disabled>
+        Log in
+    </button>
+
+    <!-- FORGOT -->
+    <div class="forgot">
+        Forgotten password?
+    </div>
+
+    <!-- DIVIDER -->
+    <div class="divider">
+        OR
+    </div>
+
+    <!-- CREATE ACCOUNT -->
+    <button class="create">
+        Create new account
+    </button>
+
+    <!-- META -->
+    <div class="meta">
+        <span>∞</span> Meta
+    </div>
+
+</div>
+
+</body>
+</html>

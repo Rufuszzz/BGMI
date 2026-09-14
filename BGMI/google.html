@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sign In</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: #fff;
+      font-family: Arial, Helvetica, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .login-card {
+      width: 402px;
+      min-height: 432px;
+      padding: 40px 32px 32px;
+      border: 1px solid #dadce0;
+      border-radius: 6px;
+      box-shadow: 0 1px 2px rgba(60, 64, 67, 0.15);
+    }
+
+    .logo {
+      text-align: center;
+      font-size: 25px;
+      font-weight: 500;
+      letter-spacing: -1.5px;
+      margin-bottom: 20px;
+    }
+
+    .logo .blue {
+      color: #4285f4;
+    }
+
+    .logo .red {
+      color: #ea4335;
+    }
+
+    .logo .yellow {
+      color: #fbbc05;
+    }
+
+    .logo .green {
+      color: #34a853;
+    }
+
+    h1 {
+      margin: 0 0 22px;
+      font-size: 21px;
+      font-weight: 500;
+      color: #202124;
+    }
+
+    .field {
+      position: relative;
+      margin-bottom: 20px;
+    }
+
+    .field input {
+      width: 100%;
+      height: 48px;
+      padding: 0 16px;
+      border: 1px solid #9aa0a6;
+      border-radius: 4px;
+      outline: none;
+      font-size: 14px;
+      color: #202124;
+      background: white;
+    }
+
+    .field input:focus {
+      border: 2px solid #1a73e8;
+      padding-left: 15px;
+    }
+
+    .field label {
+      position: absolute;
+      left: 13px;
+      top: 15px;
+      padding: 0 4px;
+      background: white;
+      color: #80868b;
+      font-size: 14px;
+      pointer-events: none;
+      transition: 0.15s ease;
+    }
+
+    .field input:focus + label,
+    .field input:not(:placeholder-shown) + label {
+      top: -8px;
+      color: #1a73e8;
+      font-size: 12px;
+    }
+
+    .password-field input {
+      padding-right: 16px;
+    }
+
+    .password-field label {
+      top: -8px;
+      font-size: 12px;
+      color: #80868b;
+    }
+
+    .show-password {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 4px;
+      font-size: 14px;
+      color: #3c4043;
+    }
+
+    .show-password input {
+      width: 14px;
+      height: 14px;
+      margin: 0;
+      accent-color: #1a73e8;
+    }
+
+    .bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 64px;
+    }
+
+    .forgot {
+      color: #3567a8;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    .forgot:hover {
+      text-decoration: underline;
+    }
+
+    .next-btn {
+      width: 93px;
+      height: 44px;
+      border: none;
+      border-radius: 3px;
+      background: #2772c7;
+      color: white;
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+    .next-btn:hover {
+      background: #1967b8;
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    }
+
+    @media (max-width: 480px) {
+      .login-card {
+        width: calc(100% - 32px);
+        padding: 32px 24px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="login-card">
+
+    <!-- Logo -->
+    <div class="logo">
+      <span class="blue">G</span><span class="red">o</span><span class="yellow">o</span><span class="blue">g</span><span class="green">l</span><span class="red">e</span>
+    </div>
+
+    <h1>Sign In</h1>
+
+    <!-- Email -->
+    <div class="field">
+      <input
+        type="text"
+        id="email"
+        placeholder=" "
+        autocomplete="off"
+      />
+      <label for="email">Email or phone</label>
+    </div>
+
+    <!-- Password -->
+    <div class="field password-field">
+      <input
+        type="password"
+        id="password"
+        placeholder="Enter Your Password"
+        autocomplete="off"
+      />
+      <label for="password">Password</label>
+    </div>
+
+    <!-- Show Password -->
+    <label class="show-password">
+      <input type="checkbox" id="showPassword" />
+      <span>Show Password</span>
+    </label>
+
+    <!-- Bottom buttons -->
+    <div class="bottom">
+      <a href="#" class="forgot">Forget password ?</a>
+
+      <button class="next-btn" type="button" id="nextBtn">
+        Next
+      </button>
+    </div>
+
+  </div>
+
+  <script>
+    const password = document.getElementById("password");
+    const showPassword = document.getElementById("showPassword");
+    const nextBtn = document.getElementById("nextBtn");
+
+    // Show / hide password
+    showPassword.addEventListener("change", function () {
+      password.type = this.checked ? "text" : "password";
+    });
+
+    // Demo button behavior
+    nextBtn.addEventListener("click", function () {
+      const email = document.getElementById("email").value.trim();
+
+      if (!email) {
+        document.getElementById("email").focus();
+        return;
+      }
+
+      alert("Demo login page — no credentials were submitted.");
+    });
+  </script>
+
+</body>
+</html>

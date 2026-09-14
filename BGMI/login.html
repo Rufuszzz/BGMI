@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+  <title>BGMI Mobile Login</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    html, body {
+      width: 100%;
+      min-height: 100%;
+      margin: 0;
+    }
+
+    body {
+      min-height: 100svh;
+      font-family: Arial, Helvetica, sans-serif;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      overflow: hidden;
+
+      /* BGMI 4K-style full-screen background */
+      background-image:
+        linear-gradient(rgba(0, 0, 0, .38), rgba(0, 0, 0, .62)),
+        url("images/bg.png");
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-attachment: scroll;
+    }
+
+    .login-container {
+      width: min(100%, 380px);
+      padding: 28px 22px 24px;
+      text-align: center;
+      border: 1px solid rgba(255, 255, 255, .18);
+      border-radius: 22px;
+      background: rgba(0, 0, 0, .68);
+      box-shadow: 0 18px 55px rgba(0, 0, 0, .55);
+      backdrop-filter: blur(7px);
+      -webkit-backdrop-filter: blur(7px);
+    }
+
+    h2 {
+      margin: 0 0 22px;
+      font-size: clamp(20px, 5vw, 26px);
+      letter-spacing: .4px;
+    }
+
+    .login-button {
+      width: 100%;
+      min-height: 50px;
+      margin: 8px 0;
+      padding: 13px 16px;
+      border: 0;
+      border-radius: 10px;
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: transform .15s ease, opacity .15s ease;
+      touch-action: manipulation;
+    }
+
+    .login-button:active {
+      transform: scale(.98);
+    }
+
+    .login-button.google {
+      background: #fff;
+      color: #333;
+    }
+
+    .login-button.facebook {
+      background: #4267B2;
+      color: #fff;
+    }
+
+    .login-button.twitter {
+      background: #050505;
+      color: #fff;
+      border: 1px solid rgba(255,255,255,.22);
+    }
+
+    .footer {
+      margin-top: 16px;
+      font-size: 11px;
+      line-height: 1.5;
+      color: #cfcfcf;
+    }
+
+    /* Phone-first layout */
+    @media (max-width: 480px) {
+      body {
+        padding: 14px;
+        background-attachment: scroll;
+      }
+
+      .login-container {
+        width: 100%;
+        padding: 25px 18px 20px;
+        border-radius: 18px;
+      }
+
+      h2 {
+        margin-bottom: 18px;
+      }
+
+      .login-button {
+        min-height: 52px;
+        font-size: 14px;
+      }
+    }
+
+    @media (max-height: 650px) and (orientation: landscape) {
+      .login-container {
+        padding: 14px 20px;
+        max-height: 94svh;
+        overflow-y: auto;
+      }
+
+      h2 {
+        margin-bottom: 10px;
+      }
+
+      .login-button {
+        min-height: 42px;
+        margin: 5px 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="login-container">
+    <h2>Login to BGMI</h2>
+
+    <button class="login-button google" type="button">Sign in with Google</button>
+    <button class="login-button facebook" type="button">Sign in with Facebook</button>
+    <button class="login-button twitter" type="button">𝕏&nbsp;&nbsp; Sign in with X </button>
+
+    <div class="footer">
+      BGMI mobile-friendly demo page
+    </div>
+  </main>
+</body>
+</html>
